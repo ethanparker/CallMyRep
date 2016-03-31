@@ -18,16 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppQ-6z-NwA">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone6_1" translatesAutoresizingMaskIntoConstraints="NO" id="tdY-Xe-OqL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.44705882349999998" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="ppQ-6z-NwA" secondAttribute="bottom" id="9Dt-ku-YAf"/>
+                            <constraint firstAttribute="trailing" secondItem="ppQ-6z-NwA" secondAttribute="trailing" id="9xR-S6-rQJ"/>
                             <constraint firstItem="tdY-Xe-OqL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="E73-Jm-SmJ"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="tdY-Xe-OqL" secondAttribute="bottom" id="VQG-aZ-BFW"/>
                             <constraint firstItem="tdY-Xe-OqL" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="aHh-s0-XdY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tdY-Xe-OqL" secondAttribute="trailing" constant="-20" id="hCB-tT-oB8"/>
+                            <constraint firstItem="ppQ-6z-NwA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="opC-OG-b6O"/>
+                            <constraint firstAttribute="topMargin" secondItem="ppQ-6z-NwA" secondAttribute="top" id="uJQ-wl-tKM"/>
                         </constraints>
                     </view>
                 </viewController>
