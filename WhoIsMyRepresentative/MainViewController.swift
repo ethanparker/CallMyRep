@@ -133,7 +133,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.activityIndicator.startAnimating()
         self.activityIndicator.isHidden = false
         
-        CLGeocoder().reverseGeocodeLocation(self.locationManager.location!, completionHandler: {(placemarks, error) -> Void in
+        guard let location = self.locationManager.location else {
+            showLocationFailAlert()
+            return
+        }
+        
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
             
             if error != nil {
                 print("Reverse geocoder failed with error" + error!.localizedDescription)
@@ -196,7 +201,22 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         task.resume()
     }
     
-    func showFailedZipCodeAttempt () {
+    func showLocationFailAlert() {
+        let alertTitle = "Location Fail"
+        let alertMessage = "Allow permission for location"
+        let alertOk = "Ok"
+        
+        let refreshAlert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: alertOk, style: .default, handler: { (action: UIAlertAction!) in
+            refreshAlert .dismiss(animated: true, completion: nil)
+            
+        }))
+        present(refreshAlert, animated: true, completion: nil)
+        
+    }
+    
+    func showFailedZipCodeAttempt() {
         let alertTitle = "Zip Code Not Found"
         let alertMessage = "Please enter a valid US Zip Code."
         let alertOk = "Ok"
@@ -211,7 +231,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func showWrongZipCodeAlert () {
+    func showWrongZipCodeAlert() {
         let alertTitle = "Please Enter a Valid Zip Code"
         let alertMessage = "US Zip Codes are 5 digits."
         let alertOk = "Ok"
