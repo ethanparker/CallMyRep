@@ -58,7 +58,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let phoneString = repDict["phone"],
             let districtString = repDict["district"]
             else {
-                print("Error populating values from json")
+                showFailAlert(title: "Error Showing Reps", message: "Please try again later.")
                 return cell
         }
         
@@ -77,7 +77,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard let repDict = self.arrayForRepInfo.object(at: indexPath.row) as? [String:Any],
             let phoneCallString = repDict["phone"]
             else {
-                print("Error populating values from json")
+                showFailAlert(title: "Error Showing Reps", message: "Please try again later.")
                 return
         }
         
@@ -110,7 +110,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let zipCodeString = self.zipCodeField.text
         if let zipCount = zipCodeString?.count {
             if zipCount < 5 || zipCount > 6 {
-                self.showWrongZipCodeAlert()
+                self.showFailAlert(title: "ZIP Code Not Found", message: "US ZIP Codes are 5 digits.")
             } else {
                 self.activityIndicator.startAnimating()
                 self.activityIndicator.isHidden = false
@@ -134,14 +134,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.activityIndicator.isHidden = false
         
         guard let location = self.locationManager.location else {
-            showLocationFailAlert()
+            showFailAlert(title: "Location Fail", message: "Allow permission for location")
             return
         }
         
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
             
             if error != nil {
-                print("Reverse geocoder failed with error" + error!.localizedDescription)
+                if let error = error {
+                    self.showFailAlert(title: "Reverse geocoder failed", message: error.localizedDescription)
+                }
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.isHidden = true
                 return
@@ -149,14 +151,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             if placemarks!.count > 0 {
                 let pm = placemarks![0]
-                
-                print(pm.postalCode!) //prints zip code
                 self.zipCodeField.text = pm.postalCode
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.isHidden = true
             }
             else {
-                print("Problem with the data received from geocoder")
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.isHidden = true
             }
@@ -175,18 +174,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             do {
                 let JSON = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions(rawValue: 0))
                 guard let JSONDictionary :NSDictionary = JSON as? NSDictionary else {return}
-                print("JSONDictionary from API call: \(JSONDictionary)")
                 if let customerArray = JSONDictionary.value(forKey: "results") as? NSArray {
                     self.arrayForRepInfo = customerArray
                 }
             }
             catch let JSONError as NSError {
-                print("\(JSONError)")
-                
                 DispatchQueue.main.sync(execute: {
                     self.activityIndicator.stopAnimating()
                     self.activityIndicator.isHidden = true
-                    self.showFailedZipCodeAttempt()
+                    self.showFailAlert(title: "ZIP Code Not Found", message: "Please enter valid US ZIP Code")
+                    print(JSONError.localizedDescription)
                 })
                 
             }
@@ -201,39 +198,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         task.resume()
     }
     
-    func showLocationFailAlert() {
-        let alertTitle = "Location Fail"
-        let alertMessage = "Allow permission for location"
-        let alertOk = "Ok"
-        
-        let refreshAlert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
-        
-        refreshAlert.addAction(UIAlertAction(title: alertOk, style: .default, handler: { (action: UIAlertAction!) in
-            refreshAlert .dismiss(animated: true, completion: nil)
-            
-        }))
-        present(refreshAlert, animated: true, completion: nil)
-        
-    }
-    
-    func showFailedZipCodeAttempt() {
-        let alertTitle = "Zip Code Not Found"
-        let alertMessage = "Please enter a valid US Zip Code."
-        let alertOk = "Ok"
-        
-        let refreshAlert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
-        
-        refreshAlert.addAction(UIAlertAction(title: alertOk, style: .default, handler: { (action: UIAlertAction!) in
-            refreshAlert .dismiss(animated: true, completion: nil)
-            
-        }))
-        present(refreshAlert, animated: true, completion: nil)
-        
-    }
-    
-    func showWrongZipCodeAlert() {
-        let alertTitle = "Please Enter a Valid Zip Code"
-        let alertMessage = "US Zip Codes are 5 digits."
+    func showFailAlert(title: String, message: String) {
+        let alertTitle = title
+        let alertMessage = message
         let alertOk = "Ok"
         
         let refreshAlert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)

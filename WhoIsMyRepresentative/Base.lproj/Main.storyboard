@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment version="4096" identifier="iOS"/>
+        <deployment version="4112" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,7 +50,7 @@
                                     <constraint firstItem="lBh-8k-aKP" firstAttribute="centerY" secondItem="bkf-7p-2Em" secondAttribute="centerY" constant="13.5" id="lei-zB-B4O"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your zip code and press &quot;search&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39U-S9-wUC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your ZIP Code and press &quot;SEARCH&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39U-S9-wUC">
                                 <rect key="frame" x="40" y="75" width="295" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="NA9-6u-yDa"/>
@@ -68,7 +68,7 @@
                                 </constraints>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAH-Hs-X1D">
-                                <rect key="frame" x="57" y="156" width="100" height="30"/>
+                                <rect key="frame" x="57" y="158" width="100" height="30"/>
                                 <color key="backgroundColor" red="0.066666666669999999" green="0.44705882349999998" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="nXg-vS-gok"/>
@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z3y-tG-iT3">
-                                <rect key="frame" x="-4" y="195" width="383" height="472"/>
+                                <rect key="frame" x="-4" y="198" width="383" height="469"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="560" id="s0U-uy-PZr"/>
@@ -98,9 +98,9 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cql-S8-vAT">
-                                <rect key="frame" x="57" y="118" width="282.5" height="30"/>
+                                <rect key="frame" x="57" y="118" width="277.5" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Zip Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="orn-Vb-aBh">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter ZIP Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="orn-Vb-aBh">
                                         <rect key="frame" x="0.0" y="0.0" width="190" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -109,10 +109,10 @@
                                         </constraints>
                                         <color key="textColor" red="0.066666666669999999" green="0.44705882349999998" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                     </textField>
                                     <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dng-5C-lpa">
-                                        <rect key="frame" x="200" y="0.0" width="82.5" height="30"/>
+                                        <rect key="frame" x="200" y="0.0" width="77.5" height="30"/>
                                         <color key="backgroundColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="TT4-gU-kJO"/>
@@ -133,10 +133,10 @@
                             <constraint firstItem="bkf-7p-2Em" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="D0N-88-6va"/>
                             <constraint firstItem="25E-7l-lfb" firstAttribute="bottom" secondItem="Cql-S8-vAT" secondAttribute="bottom" constant="-5" id="DqH-oe-e8T"/>
                             <constraint firstItem="z3y-tG-iT3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="HTY-sZ-0YT"/>
-                            <constraint firstItem="aAH-Hs-X1D" firstAttribute="top" secondItem="Cql-S8-vAT" secondAttribute="bottom" constant="8" symbolic="YES" id="La8-wN-RzG"/>
+                            <constraint firstItem="aAH-Hs-X1D" firstAttribute="top" secondItem="Cql-S8-vAT" secondAttribute="bottom" constant="10" id="La8-wN-RzG"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aAH-Hs-X1D" secondAttribute="trailing" constant="20" symbolic="YES" id="Maa-SB-H6a"/>
                             <constraint firstItem="z3y-tG-iT3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TR5-2n-cfQ"/>
-                            <constraint firstItem="z3y-tG-iT3" firstAttribute="top" secondItem="aAH-Hs-X1D" secondAttribute="bottom" constant="9" id="U9n-yw-h6a"/>
+                            <constraint firstItem="z3y-tG-iT3" firstAttribute="top" secondItem="aAH-Hs-X1D" secondAttribute="bottom" constant="10" id="U9n-yw-h6a"/>
                             <constraint firstItem="39U-S9-wUC" firstAttribute="centerX" secondItem="bkf-7p-2Em" secondAttribute="centerX" id="WpB-We-7cF"/>
                             <constraint firstItem="bkf-7p-2Em" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="eps-GE-gB2"/>
                             <constraint firstItem="25E-7l-lfb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="lnw-yb-ApZ"/>
