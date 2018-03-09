@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA6211B52052248D00AF2F0F /* RepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6211B42052248D00AF2F0F /* RepTableViewCell.swift */; };
 		B458D7281C97877A00925F0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458D7271C97877A00925F0A /* AppDelegate.swift */; };
-		B458D72A1C97877A00925F0A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458D7291C97877A00925F0A /* MainViewController.swift */; };
+		B458D72A1C97877A00925F0A /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458D7291C97877A00925F0A /* CallViewController.swift */; };
 		B458D72D1C97877A00925F0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B458D72B1C97877A00925F0A /* Main.storyboard */; };
 		B458D72F1C97877A00925F0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B458D72E1C97877A00925F0A /* Assets.xcassets */; };
 		B458D7321C97877A00925F0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B458D7301C97877A00925F0A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA6211B42052248D00AF2F0F /* RepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepTableViewCell.swift; sourceTree = "<group>"; };
 		B458D7241C97877A00925F0A /* WhoIsMyRepresentative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoIsMyRepresentative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B458D7271C97877A00925F0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B458D7291C97877A00925F0A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B458D7291C97877A00925F0A /* CallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		B458D72C1C97877A00925F0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B458D72E1C97877A00925F0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B458D7311C97877A00925F0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +37,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA6211AF2052208E00AF2F0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B458D72B1C97877A00925F0A /* Main.storyboard */,
+				B458D7301C97877A00925F0A /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA6211B02052209700AF2F0F /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B458D7271C97877A00925F0A /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		AA6211B12052209F00AF2F0F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B458D7291C97877A00925F0A /* CallViewController.swift */,
+				AA6211B42052248D00AF2F0F /* RepTableViewCell.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		AA6211B2205220AE00AF2F0F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B458D72E1C97877A00925F0A /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		AA6211B3205220C100AF2F0F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B458D7331C97877A00925F0A /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B458D71B1C97877A00925F0A = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +98,11 @@
 		B458D7261C97877A00925F0A /* WhoIsMyRepresentative */ = {
 			isa = PBXGroup;
 			children = (
-				B458D7271C97877A00925F0A /* AppDelegate.swift */,
-				B458D7291C97877A00925F0A /* MainViewController.swift */,
-				B458D72B1C97877A00925F0A /* Main.storyboard */,
-				B458D72E1C97877A00925F0A /* Assets.xcassets */,
-				B458D7301C97877A00925F0A /* LaunchScreen.storyboard */,
-				B458D7331C97877A00925F0A /* Info.plist */,
+				AA6211B02052209700AF2F0F /* Delegate */,
+				AA6211B12052209F00AF2F0F /* Source */,
+				AA6211AF2052208E00AF2F0F /* Views */,
+				AA6211B2205220AE00AF2F0F /* Assets */,
+				AA6211B3205220C100AF2F0F /* Supporting Files */,
 			);
 			path = WhoIsMyRepresentative;
 			sourceTree = "<group>";
@@ -136,7 +179,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B458D72A1C97877A00925F0A /* MainViewController.swift in Sources */,
+				B458D72A1C97877A00925F0A /* CallViewController.swift in Sources */,
+				AA6211B52052248D00AF2F0F /* RepTableViewCell.swift in Sources */,
 				B458D7281C97877A00925F0A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,7 +314,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = WhoIsMyRepresentative/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WhoIsMyRepresentative/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.parkerplanners.WhoIsMyRepresentative;
@@ -291,7 +335,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = WhoIsMyRepresentative/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WhoIsMyRepresentative/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.parkerplanners.WhoIsMyRepresentative;
