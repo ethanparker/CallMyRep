@@ -145,8 +145,8 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="M8w-Di-TfK"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fnG-Di-hiW"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="fhQ-OQ-ONl"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Wbe-v7-We9"/>
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cql-S8-vAT">

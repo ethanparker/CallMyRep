@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import CoreLocation
 
 class CallViewController: UIViewController {
@@ -125,7 +126,7 @@ class CallViewController: UIViewController {
     
 }
 
-extension MainViewController: UITextFieldDelegate {
+extension CallViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -135,7 +136,7 @@ extension MainViewController: UITextFieldDelegate {
 }
 
  // UITableView DataSource and Delegate
-extension MainViewController: UITableViewDatasource, UITableViewDelegate {
+extension CallViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
         return arrayForRepInfo.count
@@ -202,7 +203,7 @@ extension MainViewController: UITableViewDatasource, UITableViewDelegate {
 }
 
 // UITableView DataSource and Delegate
-extension MainViewController: CLLocationManagerDelegate {
+extension CallViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
