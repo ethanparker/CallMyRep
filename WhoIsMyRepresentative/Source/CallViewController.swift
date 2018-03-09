@@ -113,6 +113,7 @@ class CallViewController: UIViewController {
         task.resume()
     }
     
+    // Error message handler
     func showFailAlert(title: String, message: String) {
         let alertTitle = title
         let alertMessage = message
@@ -206,7 +207,7 @@ extension CallViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// UITableView DataSource and Delegate
+// Geo-Location Manager
 extension CallViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
