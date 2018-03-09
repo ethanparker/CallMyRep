@@ -32,6 +32,7 @@ class CallViewController: UIViewController {
     var arrayForRepInfo: NSArray = []
     var locationManager: CLLocationManager!
     
+    // VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         zipCodeField.delegate = self
@@ -52,6 +53,7 @@ class CallViewController: UIViewController {
         return UIStatusBarStyle.lightContent
     }
     
+    // IBActions
     @IBAction func searchRepApi(_ sender: Any) {
         // Dismiss keyboard
         view.endEditing(true)
@@ -75,6 +77,7 @@ class CallViewController: UIViewController {
         populateZipField()
     }
     
+    // Networking
     func apiCallForReps() {
         guard let zipCode = zipCodeField.text else { return }
         let urlString = NSString(format: "http://whoismyrepresentative.com/getall_mems.php?zip=%@&output=json", zipCode)
@@ -126,6 +129,7 @@ class CallViewController: UIViewController {
     
 }
 
+// Textfield delegate
 extension CallViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
